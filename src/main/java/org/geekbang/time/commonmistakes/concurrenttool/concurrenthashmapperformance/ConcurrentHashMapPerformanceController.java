@@ -31,6 +31,7 @@ public class ConcurrentHashMapPerformanceController {
         stopWatch.start("normaluse");
         Map<String, Long> normaluse = normaluse();
         stopWatch.stop();
+        log.info("normaluse: {}", normaluse);
         Assert.isTrue(normaluse.size() == ITEM_COUNT, "normaluse size error");
         Assert.isTrue(normaluse.entrySet().stream()
                         .mapToLong(item -> item.getValue()).reduce(0, Long::sum) == LOOP_COUNT
@@ -38,11 +39,13 @@ public class ConcurrentHashMapPerformanceController {
         stopWatch.start("gooduse");
         Map<String, Long> gooduse = gooduse();
         stopWatch.stop();
+        log.info("gooduse: {}", gooduse);
         Assert.isTrue(gooduse.size() == ITEM_COUNT, "gooduse size error");
         Assert.isTrue(gooduse.entrySet().stream()
                         .mapToLong(item -> item.getValue())
                         .reduce(0, Long::sum) == LOOP_COUNT
                 , "gooduse count error");
+        log.info("here:");
         log.info(stopWatch.prettyPrint());
         return "OK";
     }

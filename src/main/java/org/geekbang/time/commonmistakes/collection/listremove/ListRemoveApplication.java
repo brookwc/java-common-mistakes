@@ -12,7 +12,7 @@ public class ListRemoveApplication {
 //        removeByIndex(4);
 //        removeByValue(Integer.valueOf(4));
 
-        forEachRemoveWrong();
+        //forEachRemoveWrong();
         forEachRemoveRight();
         forEachRemoveRight2();
     }

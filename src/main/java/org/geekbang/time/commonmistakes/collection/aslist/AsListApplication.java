@@ -11,8 +11,11 @@ import java.util.stream.Collectors;
 public class AsListApplication {
 
     public static void main(String[] args) {
-
+        wrong1();
+        right1();
+        wrong2();
         right2();
+
 
     }
 
@@ -20,6 +23,7 @@ public class AsListApplication {
         int[] arr = {1, 2, 3};
         List list = Arrays.asList(arr);
         log.info("list:{} size:{} class:{}", list, list.size(), list.get(0).getClass());
+        log.info("class:{}", list.get(0).getClass());
     }
 
     private static void right1() {

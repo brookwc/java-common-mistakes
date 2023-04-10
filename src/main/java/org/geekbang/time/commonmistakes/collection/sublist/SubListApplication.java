@@ -26,22 +26,28 @@ public class SubListApplication {
 
     public static void main(String[] args) throws InterruptedException {
 
-        oom();
-        //wrong();
-        //right1();
-//        right2();
+        //oom();
+        wrong();
+        right1();
+        right2();
         //oomfix();
     }
 
     private static void oom() {
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 5000; i++) {
+            if (i % 100 == 0) {
+                System.out.println(i);
+            }
             List<Integer> rawList = IntStream.rangeClosed(1, 100000).boxed().collect(Collectors.toList());
             data.add(rawList.subList(0, 1));
         }
     }
 
     private static void oomfix() {
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 5000; i++) {
+            if (i % 100 == 0) {
+                System.out.println(i);
+            }
             List<Integer> rawList = IntStream.rangeClosed(1, 100000).boxed().collect(Collectors.toList());
             data.add(new ArrayList<>(rawList.subList(0, 1)));
         }

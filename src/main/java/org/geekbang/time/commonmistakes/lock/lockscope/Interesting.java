@@ -11,15 +11,21 @@ public class Interesting {
 
     public synchronized void add() {
         log.info("add start");
+        log.info("a: {}", a);
+        log.info("b: {}", b);
         for (int i = 0; i < 1000000; i++) {
             a++;
             b++;
         }
         log.info("add done");
+        log.info("a: {}", a);
+        log.info("b: {}", b);
     }
 
     public void compare() {
         log.info("compare start");
+        log.info("a: {}", a);
+        log.info("b: {}", b);
         for (int i = 0; i < 1000000; i++) {
             if (a < b) {
                 log.info("a:{},b:{},{}", a, b, a > b);
@@ -27,10 +33,14 @@ public class Interesting {
             }
         }
         log.info("compare done");
+        log.info("a: {}", a);
+        log.info("b: {}", b);
     }
 
     public synchronized void compareRight() {
         log.info("compare start");
+        log.info("a: {}", a);
+        log.info("b: {}", b);
         for (int i = 0; i < 1000000; i++) {
             Assert.assertTrue(a == b);
             if (a < b) {
@@ -38,5 +48,7 @@ public class Interesting {
             }
         }
         log.info("compare done");
+        log.info("a: {}", a);
+        log.info("b: {}", b);
     }
 }
